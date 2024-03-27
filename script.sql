@@ -49,7 +49,7 @@ create table questions
     title            varchar(255),
     text             text,
     creationdatetime timestamp default CURRENT_TIMESTAMP,
-    pictureurl       bytea,
+    pictureurl       varchar,
     tagid            integer
         constraint question_tagid_fkey
             references tag,
