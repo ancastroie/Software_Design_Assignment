@@ -27,11 +27,13 @@ public class Questions {
     @Column(name="creationdatetime",columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
+
+
     private LocalDateTime creationdatetime;
 
     @Column(name="pictureurl")
     @Lob
-    private byte[] pictureurl;
+    private String pictureurl;
 
     @Column(name="tagid")
     private int tagid;
@@ -45,7 +47,7 @@ public class Questions {
     public Questions(){
 
     }
-    public Questions(int questionid,int authorid,String title,String text,LocalDateTime creationdatetime, byte[] pictureurl,int tagid, int votecount,Boolean isdeleted){
+    public Questions(int questionid,int authorid,String title,String text,LocalDateTime creationdatetime, String pictureurl,int tagid, int votecount,Boolean isdeleted){
         this.questionid=questionid;
         this.authorid=authorid;
         this.title=title;
@@ -97,11 +99,11 @@ public class Questions {
         this.creationdatetime = creationdatetime;
     }
 
-    public byte[] getPictureurl() {
+    public String getPictureurl() {
         return pictureurl;
     }
 
-    public void setPictureurl(byte[] pictureurl) {
+    public void setPictureurl(String pictureurl) {
         this.pictureurl = pictureurl;
     }
 
