@@ -1,0 +1,66 @@
+{
+  "signupUsersList": [
+    {
+      "id": "6c69",
+      "fname": "anca",
+      "lname": "str",
+      "email": "anca@email.com",
+      "phone": "2131",
+      "password": "123"
+    },
+    {
+      "id": "8716",
+      "fname": "andh",
+      "lname": "wedwdw",
+      "email": "anca@gmail.com",
+      "phone": "23123344",
+      "password": "2321"
+    },
+    {
+      "id": "f8ed",
+      "fname": "Anca",
+      "lname": "Stroie",
+      "email": "anca@email.com",
+      "phone": "1235677",
+      "password": "12345"
+    }
+  ],
+  "questions": [
+    {
+      "id": "4261",
+      "title": "java ",
+      "body": "dwe efqwef f",
+      "tag": "dwe"
+    },
+    {
+      "id": "ae4c",
+      "title": "java ",
+      "body": "how to do it ?",
+      "tag": "?????"
+    },
+    {
+      "id": "c97a",
+      "title": "How to learn angular in 2 days ?",
+      "body": "i don't know how to do my project. pls help :))",
+      "tag": "dispair "
+    },
+    {
+      "id": "efbf",
+      "title": "ewdsh",
+      "body": "wdw\nfw\n\n\n\ne\n\nf\ne\nf\nw\nef\nw\nf\n\nw\nf",
+      "tag": "wee"
+    },
+    {
+      "id": "bfce",
+      "title": "Programming",
+      "body": "What is a pointer. How to declare a pointer.",
+      "tag": "C"
+    },
+    {
+      "id": "cf02",
+      "title": "arrays",
+      "body": "I have an array. Find the max",
+      "tag": "C++"
+    }
+  ]
+}

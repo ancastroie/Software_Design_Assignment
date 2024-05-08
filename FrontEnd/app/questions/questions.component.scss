@@ -1,0 +1,45 @@
+.questions-container {
+  padding: 50px; // Overall padding for the container
+
+  button {
+    margin-bottom: 20px; // Space below the "Ask a Question" button
+  }
+
+  h2 {
+    color: #3f51b5; // Primary color for the heading
+    text-align: left; // Align heading to the left
+  }
+
+  .question-card {
+    background: #f9f9f9; // Light background for the card
+    border: 1px solid #ddd; // Light border
+    border-radius: 8px; // Rounded corners
+    padding: 15px; // Padding within the card
+    margin-bottom: 15px; // Space between question cards
+    transition: box-shadow 0.3s ease; // Transition effect for hover
+    text-align: left; // Align content to the left
+
+    &:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Light shadow on hover
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.2em; // Slightly larger font for the title
+      font-weight: bold; // Make the title bold
+    }
+
+    p {
+      margin: 10px 0; // Space between title and body
+    }
+
+    .tag {
+      display: inline-block; // Inline display for the tag
+      padding: 2px 8px; // Padding for the tag
+      background: #e0e0e0; // Light background
+      border-radius: 4px; // Rounded corners
+      font-size: 0.9em; // Slightly smaller font for the tag
+      color: #616161; // Darker text color
+    }
+  }
+}

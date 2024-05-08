@@ -1,0 +1,27 @@
+<div class="signup-container">
+  <form [formGroup]="signup" (ngSubmit)="signupdata(signup)">
+    <h3>Sign Up</h3>
+
+    <mat-form-field>
+      <input matInput formControlName="fname" type="text" placeholder="First Name" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="lname" type="text" placeholder="Last Name" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="email" type="email" placeholder="Email" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="phone" type="text" placeholder="Phone Number" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="password" type="password" placeholder="Password" required />
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" [disabled]="!signup.valid">Sign Up</button>
+  </form>
+</div>

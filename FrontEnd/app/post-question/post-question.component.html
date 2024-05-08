@@ -1,0 +1,42 @@
+<div class="ask-question-form">
+  <form [formGroup]="questionForm" (ngSubmit)="submitQuestion()">
+    <h2>Ask a Question</h2>
+
+    <!-- Title Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="Enter a question title" />
+      <mat-error *ngIf="questionForm.get('title').hasError('required')">
+        Title is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Body Field -->
+    <mat-form-field appearance="fill">
+      <mat-label>Body</mat-label>
+      <textarea
+        matInput
+        formControlName="body"
+        rows="6"
+        placeholder="Describe your question in detail"
+      ></textarea>
+      <mat-error *ngIf="questionForm.get('body').hasError('required')">
+        Body is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Tag Field (Only one tag) -->
+    <mat-form-field appearance="fill">
+      <mat-label>Tag</mat-label>
+      <input matInput formControlName="tag" placeholder="Enter a single tag" />
+      <mat-error *ngIf="questionForm.get('tag').hasError('required')">
+        Tag is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="!questionForm.valid">
+      Ask Question
+    </button>
+  </form>
+</div>

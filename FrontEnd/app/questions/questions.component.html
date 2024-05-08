@@ -1,0 +1,23 @@
+<div class="questions-container">
+  <!-- Button to navigate to the "Ask a Question" page -->
+  <button mat-raised-button color="primary" (click)="redirectToAskQuestion()">
+    Ask a Question
+  </button>
+
+  <h2>Questions</h2>
+
+  <!-- Display a list of questions -->
+  <div *ngIf="questions.length > 0; else noQuestions">
+    <!-- Use a card-based design for each question -->
+    <div *ngFor="let question of questions" class="question-card">
+      <h3>{{ question.title }}</h3>
+      <p>{{ question.body }}</p>
+      <span class="tag">Tag: {{ question.tag }}</span>
+    </div>
+  </div>
+
+  <!-- No questions found -->
+  <ng-template #noQuestions>
+    <p>No questions found. Be the first to ask!</p>
+  </ng-template>
+</div>

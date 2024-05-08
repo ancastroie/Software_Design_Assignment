@@ -1,0 +1,42 @@
+.ask-question-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  // Form heading
+  h2 {
+    margin-bottom: 20px;
+    color: #3f51b5; // Primary color
+  }
+
+  // Form styling
+  form {
+    width: 100%;
+    max-width: 600px; // Keep the form within a certain width
+    padding: 20px;
+    background: white; // White background for the form
+    border-radius: 8px; // Rounded corners
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Light shadow
+
+    display: flex;
+    flex-direction: column; // Ensure form inputs are in a vertical column
+    gap: 20px; // Space between form elements
+
+    // Ensure full-width fields
+    mat-form-field {
+      width: 100%;
+    }
+
+    // Error message styling
+    mat-error {
+      color: #f50057; // Secondary color for errors
+    }
+
+    // Submit button styling
+    button {
+      margin-top: 20px; // Space above the submit button
+      width: 100%; // Full-width button
+    }
+  }
+}
