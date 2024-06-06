@@ -1,0 +1,50 @@
+<!-- Toolbar for non-logged-in users -->
+<div *ngIf="!isUserLoggedIn">
+  <mat-toolbar color="primary" class="mat-elevation-z8">
+    <span class="center-container">Stack Overflow</span>
+    <span class="example-spacer"></span>
+    <button routerLink="/signup" mat-button class="sign-up-button">Sign up</button>
+    <button routerLink="/login" mat-button class="log-in-button">Log in</button>
+  </mat-toolbar>
+</div>
+
+<!-- Toolbar and drawer for logged-in users -->
+<div *ngIf="isUserLoggedIn">
+  <mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="drawer.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>
+    <span class="center-container">Stack Overflow</span>
+    <span class="example-spacer"></span>
+    <button (click)="logout()" mat-button class="logout-button">Logout</button>
+  </mat-toolbar>
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" position="start">
+      <mat-nav-list>
+        <mat-list-item>
+          <button mat-button routerLink="/home"><mat-icon>home</mat-icon>Home</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button routerLink="/user/questions"><mat-icon>question_answer</mat-icon>Questions</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button routerLink="/signup"><mat-icon>person_add</mat-icon>Sign up</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button routerLink="/login"><mat-icon>login</mat-icon>Log in</button>
+        </mat-list-item>
+        <mat-list-item *ngIf="isModerator">
+          <button mat-button routerLink="/user/user-management"><mat-icon>supervisor_account</mat-icon>User Management</button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+<!-- Only one router-outlet for the whole application -->
+<div *ngIf="!isUserLoggedIn">
+  <router-outlet></router-outlet>
+</div>

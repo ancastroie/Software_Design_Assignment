@@ -1,0 +1,13 @@
+<div class="edit-answer-container">
+  <h2>Edit Answer</h2>
+  <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Text</mat-label>
+      <textarea matInput formControlName="text"></textarea>
+      <mat-error *ngIf="answerForm.get('text')?.invalid">Text is required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="answerForm.invalid">Save</button>
+    <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+  </form>
+</div>

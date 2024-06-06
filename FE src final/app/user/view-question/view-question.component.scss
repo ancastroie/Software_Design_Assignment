@@ -1,0 +1,86 @@
+.question-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .question-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+
+    h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .title {
+      text-decoration: underline;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+}
+
+
+.answer-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  margin: 0 auto; // Center the answer section horizontally
+  display: flex; // Use flexbox to align items
+  flex-direction: column; // Align items vertically
+  align-items: center; // Center items horizontally
+}
+
+.h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+@media  screen and (max-width:600px) {
+  .answer-section{
+    padding:10px;
+
+  }
+  h2{
+    font-size:20px;
+    margin-bottom: 5px;
+  }
+
+}
+
+.answer-card{
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px){
+  .answer-card{
+    padding:10px;
+  }
+
+}
+.edit-button,
+.delete-button {
+  float: right; // Align buttons to the right
+  margin-left: 10px; // Add space between buttons
+}
+

@@ -1,0 +1,19 @@
+<div class="edit-question-container">
+  <h2>Edit Question</h2>
+  <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="questionForm.get('title').invalid">Title is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Text</mat-label>
+      <textarea matInput formControlName="text"></textarea>
+      <mat-error *ngIf="questionForm.get('text').invalid">Text is required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="questionForm.invalid">Save</button>
+    <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+  </form>
+</div>

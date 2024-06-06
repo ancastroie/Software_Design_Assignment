@@ -1,0 +1,20 @@
+/* signup.component.css */
+
+.signup-container {
+  max-width: 400px; /* Set max width for the form */
+  margin: auto; /* Center the form horizontally */
+  padding: 20px; /* Add padding around the form */
+}
+
+/* Style for mat-form-field */
+mat-form-field {
+  width: 100%; /* Set the width of the form field to 100% */
+  margin-bottom: 20px; /* Add space between each form field */
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  width: 100%; /* Set the width of the button to 100% */
+}
+
+/* Optional: Add more styling as needed */

@@ -1,0 +1,52 @@
+<div class="questions-container">
+
+
+  <div class="search-container">
+    <input type="text" placeholder="Search by Text..." [(ngModel)]="textSearchQuery" class="search-input">
+    <button mat-raised-button color="primary" (click)="searchByText()">Search</button>
+  </div>
+
+  <button mat-raised-button color="primary" routerLink="/user/postquestion">
+    Ask a Question
+  </button>
+
+  <h2>Questions</h2>
+
+  <div *ngIf="questions.length > 0; else noQuestions">
+    <div *ngFor="let question of questions" class="question-card" >
+
+      <!-- Edit button -->
+      <button *ngIf="isAuthor(question.authorid) ||ismoderator" mat-icon-button color="primary" class="edit-button" [routerLink]="['/user/edit-question', question.questionid]">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <!-- Delete button -->
+      <button *ngIf="isAuthor(question.authorid) ||ismoderator" mat-icon-button color="warn" class="delete-button" (click)="deleteQuestion(question.questionid)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <a [routerLink]="['/user/view-question', question.questionid]">
+        <h3>{{ question.title }}</h3>
+      </a>
+
+
+      <p>{{ question.text }}</p>
+      <p><strong>Author:</strong> {{question.authorName}} (Score: {{ question.userscore }})</p>
+      <p><strong>Posted on:</strong> {{ question.creationdatetime | date }}</p>
+      <p><strong>Tags:</strong> {{ question.tags}}</p>
+
+      <button mat-icon-button color="primary" (click)="addVote(question,'true')">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="addVote(question,'false')">
+        <mat-icon>thumb_down</mat-icon>
+      </button>
+      <p>Vote count: {{ question.votecount }}</p>
+
+    </div>
+  </div>
+
+  <ng-template #noQuestions>
+    <p>No questions found. Be the first to ask!</p>
+  </ng-template>
+</div>
+<router-outlet></router-outlet>
